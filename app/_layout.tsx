@@ -11,8 +11,8 @@ import { useEffect } from 'react';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import 'react-native-reanimated';
 
-import { ThemedText } from '@/presentation/shared/ThemedText';
-import { ThemedView } from '@/presentation/shared/ThemedView';
+import { allRoutes } from '@/constants/Routes';
+import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import './global.css';
 // Prevent the splash screen from auto-hiding before asset loading is complete.
@@ -38,9 +38,27 @@ export default function RootLayout() {
   return (
     <GestureHandlerRootView style={{ backgroundColor, flex: 1 }}>
       <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-        <ThemedView margin>
-          <ThemedText>Hello World</ThemedText>
-        </ThemedView>
+        <Stack
+          screenOptions={{
+            headerShadowVisible: false,
+            contentStyle: {
+              backgroundColor: backgroundColor,
+            },
+            headerStyle: {
+              backgroundColor: backgroundColor,
+            },
+          }}
+        >
+          <Stack.Screen name='index' options={{ title: 'Home' }} />
+
+          {allRoutes.map((route) => (
+            <Stack.Screen
+              key={route.name}
+              name={route.name}
+              options={{ title: route.title }}
+            />
+          ))}
+        </Stack>
 
         <StatusBar style='auto' />
       </ThemeProvider>
