@@ -41,7 +41,7 @@ export default function Animation101Screen() {
           transform: [{ translateY: animatedTop }],
         }}
       />
-
+      {/* hola */}
       <ThemedButton className='my-5' onPress={fadeIn}>
         FadeIn
       </ThemedButton>
