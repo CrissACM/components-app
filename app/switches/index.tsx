@@ -3,7 +3,7 @@ import { ThemedSwitch } from '@/presentation/shared/ThemedSwitch';
 import { ThemedView } from '@/presentation/shared/ThemedView';
 import { useState } from 'react';
 
-export default function Switches() {
+export default function SwitchesScreen() {
   const [state, setState] = useState({
     isActive: true,
     isHungry: false,
