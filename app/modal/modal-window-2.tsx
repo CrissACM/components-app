@@ -6,7 +6,7 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { Platform } from 'react-native';
 
-export default function ModalScreen() {
+export default function ModalScreen2() {
   return (
     <ThemedView className='items-center justify-center flex-1'>
       <ThemedText>Hola, Soy Modal 2</ThemedText>

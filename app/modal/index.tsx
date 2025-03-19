@@ -3,10 +3,10 @@ import { ThemedText } from '@/presentation/shared/ThemedText';
 import { ThemedView } from '@/presentation/shared/ThemedView';
 import { Link, router } from 'expo-router';
 
-const ModalScreen = () => {
+export default function ModalScreen() {
   return (
     <ThemedView>
-      <Link href='/modal/modal-window' className='mx-4 my-2'>
+      <Link asChild href='/modal/modal-window' className='mx-4 my-2'>
         <ThemedText className='text-xl text-light-text dark:text-dark-text'>
           Open Modal
         </ThemedText>
@@ -20,5 +20,4 @@ const ModalScreen = () => {
       </ThemedButton>
     </ThemedView>
   );
-};
-export default ModalScreen;
+}
